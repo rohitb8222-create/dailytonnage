@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Sumeet Elko - Minimal Tonnage App</title>
+  <title>Sumeet Elko - Minimal Multi-Chart App</title>
   
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -21,15 +21,15 @@
       padding: 12px;
     }
     
-    /* 🧼 Minimal White Header with Multi-color Border Bottom */
+    /* 🧼 Minimal White Header with Multi-color Line */
     .main-header {
       background: #ffffff;
       color: #0f172a;
-      padding: 20px 16px;
+      padding: 18px 16px;
       border-radius: 16px;
       text-align: center;
       margin-bottom: 16px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
       border: 1px solid #e2e8f0;
       position: relative;
       overflow: hidden;
@@ -41,18 +41,17 @@
       left: 0;
       right: 0;
       height: 4px;
-      background: linear-gradient(90deg, #0284c7 0%, #10b981 33%, #f59e0b 66%, #a855f7 100%);
+      background: linear-gradient(90deg, #10b981 0%, #f59e0b 33%, #a855f7 66%, #0284c7 100%);
     }
-    .main-header h2 { font-weight: 800; font-size: 1.5rem; margin: 0; letter-spacing: 0.5px; color: #0f172a; }
-    .main-header p { font-size: 0.78rem; margin-top: 4px; margin-bottom: 0; color: #64748b; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+    .main-header h2 { font-weight: 800; font-size: 1.4rem; margin: 0; letter-spacing: 0.5px; }
+    .main-header p { font-size: 0.75rem; margin-top: 4px; margin-bottom: 0; color: #64748b; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
     
-    /* 🔘 Minimalist Soft Tabs */
+    /* 🔘 Navigation Tabs */
     .nav-container {
       background: #ffffff;
       padding: 5px;
       border-radius: 14px;
       border: 1px solid #e2e8f0;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
     }
     .btn-action { 
       font-weight: 700; 
@@ -64,7 +63,6 @@
       border: none;
       background: transparent;
     }
-    .btn-action:hover { color: #0f172a; }
     .btn-active-tab {
       background: #0f172a !important;
       color: #ffffff !important;
@@ -78,7 +76,7 @@
       padding: 16px;
       border: 1px solid #e2e8f0;
       margin-bottom: 16px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
     }
     
     .filter-label {
@@ -95,43 +93,35 @@
       border: 1px solid #cbd5e1 !important;
       color: #0f172a !important;
       border-radius: 10px;
-      padding: 8px 12px;
-    }
-    .form-control:focus, .form-select:focus {
-      border-color: #0f172a !important;
-      box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.08) !important;
     }
 
-    /* 📊 Multi-color Minimal Counter Cards (वरचे आकडे) */
+    /* 📊 Multi-color Counters */
     .stat-card {
       background: #ffffff;
       border-radius: 14px;
-      padding: 14px 12px;
+      padding: 12px 10px;
       border: 1px solid #e2e8f0;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.01);
-      border-left: 4px solid #0284c7; /* Total Weight - Sky Blue */
+      border-left: 4px solid #0284c7;
     }
-    .stat-card.trips { border-left-color: #f43f5e; } /* Trips - Red */
-    .stat-card.wet { border-left-color: #10b981; }   /* Wet - Green */
-    .stat-card.dry { border-left-color: #f59e0b; }   /* Dry - Orange */
-    .stat-card.mix { border-left-color: #a855f7; }   /* Mix - Purple */
+    .stat-card.trips { border-left-color: #f43f5e; }
+    .stat-card.wet { border-left-color: #10b981; }  
+    .stat-card.dry { border-left-color: #f59e0b; }  
+    .stat-card.mix { border-left-color: #a855f7; }  
     
-    .stat-val { font-size: 1.3rem; font-weight: 800; color: #0f172a; margin-bottom: 0; line-height: 1.2; }
-    .stat-lbl { font-size: 0.7rem; color: #64748b; font-weight: 700; text-transform: uppercase; margin-top: 4px; }
+    .stat-val { font-size: 1.15rem; font-weight: 800; color: #0f172a; margin-bottom: 0; }
+    .stat-lbl { font-size: 0.65rem; color: #64748b; font-weight: 700; text-transform: uppercase; margin-top: 2px; }
 
-    /* 📋 Professional Clean Table */
+    /* 📋 Tables Styles */
     .table-responsive { border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; margin-bottom: 12px; }
     .table-clean { margin-bottom: 0; font-size: 0.85rem; width: 100%; color: #334155; }
-    .table-clean th { background-color: #f8fafc; font-weight: 700; color: #475569; text-align: center; padding: 12px; border-bottom: 2px solid #e2e8f0; }
-    .table-clean td { text-align: center; vertical-align: middle; padding: 12px 10px; border-bottom: 1px solid #f1f5f9; }
-    .table-striped tbody tr:nth-of-type(odd) { background-color: #ffffff; }
-    .table-striped tbody tr:nth-of-type(even) { background-color: #f8fafc; }
+    .table-clean th { background-color: #f8fafc; font-weight: 700; color: #475569; text-align: center; padding: 10px; border-bottom: 2px solid #e2e8f0; }
+    .table-clean td { text-align: center; vertical-align: middle; padding: 10px 8px; border-bottom: 1px solid #f1f5f9; }
     
-    .row-total { background-color: #f1f5f9 !important; font-weight: 800; color: #0f172a; }
-    .section-divider-title { font-size: 0.82rem; font-weight: 800; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px; border-left: 4px solid #0f172a; padding-left: 8px; }
+    .row-total { background-color: #f1f5f9 !important; font-weight: 800; }
+    .section-divider-title { font-size: 0.82rem; font-weight: 800; color: #0f172a; text-transform: uppercase; border-left: 4px solid #0f172a; padding-left: 8px; margin-top: 15px; }
 
-    .chart-container { position: relative; margin: auto; height: 190px; width: 100%; }
-    .refresh-badge { font-size: 0.7rem; padding: 4px 10px; border-radius: 20px; background-color: #f1f5f9; color: #475569; font-weight: 700; border: 1px solid #e2e8f0; }
+    .chart-box { height: 180px; width: 100%; position: relative; }
+    .chart-box-pie { height: 160px; width: 100%; position: relative; }
   </style>
 </head>
 <body>
@@ -140,7 +130,7 @@
     
     <div class="main-header">
       <h2>SUMEET ELKO</h2>
-      <p>Solid Waste Tonnage Dashboard</p>
+      <p>SWM • Clean Tonnage Analytics Center</p>
     </div>
 
     <div class="d-flex justify-content-center gap-2 mb-3 nav-container">
@@ -180,60 +170,70 @@
         </div>
       </div>
 
-      <div class="row g-2 mb-3 px-1">
-        <div class="col-7">
-          <div class="stat-card">
-            <div class="stat-val" style="color: #0284c7;" id="stat-total-wt">0</div>
-            <div class="stat-lbl">Total Weight (KG)</div>
-          </div>
-        </div>
-        <div class="col-5">
-          <div class="stat-card trips">
-            <div class="stat-val" style="color: #f43f5e;" id="stat-total-trips">0</div>
-            <div class="stat-lbl">Total Trips (गाड्या)</div>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="stat-card wet">
-            <div class="stat-val" style="color: #10b981;" id="stat-wet-wt">0</div>
-            <div class="stat-lbl">Wet (ओला)</div>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="stat-card dry">
-            <div class="stat-val" style="color: #f59e0b;" id="stat-dry-wt">0</div>
-            <div class="stat-lbl">Dry (सुका)</div>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="stat-card mix">
-            <div class="stat-val" style="color: #a855f7;" id="stat-mix-wt">0</div>
-            <div class="stat-lbl">Mix (मिश्र)</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card-custom">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <span class="fw-bold" style="font-size:0.85rem; color:#475569;"><i class="fa-solid fa-chart-area text-primary me-1"></i> Date-wise Trend</span>
-          <span class="refresh-badge"><i class="fa-solid fa-arrows-rotate fa-spin-hover"></i> Live Updates</span>
-        </div>
-        <div class="chart-container">
-          <canvas id="analyticsChart"></canvas>
+      <div class="d-flex justify-content-between align-items-center mb-2 px-1">
+        <span class="fw-bold text-dark" style="font-size:0.85rem;" id="report-title">All Wards Analytics</span>
+        <div>
+          <button class="btn btn-sm btn-light border px-2 me-2" style="font-size:0.75rem;" onclick="loadDashboardData()"><i class="fa-solid fa-sync"></i> Refresh</button>
+          <button class="btn btn-sm btn-dark fw-bold px-3" style="font-size:0.75rem; background:#0f172a;" onclick="downloadDashboard()"><i class="fa-solid fa-download"></i> Download Report PNG</button>
         </div>
       </div>
 
       <div id="dashboard-capture-area" style="background: #ffffff; border: 1px solid #e2e8f0;" class="p-3 rounded-4 shadow-sm mb-4">
         
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <span class="fw-bold text-dark" style="font-size:0.88rem;" id="table-title">Summary Logs</span>
-          <div>
-            <button class="btn btn-sm btn-light border p-1 px-2 me-2" style="font-size:0.75rem; color: #475569;" onclick="loadDashboardData()"><i class="fa-solid fa-sync"></i> Refresh</button>
-            <button class="btn btn-sm btn-dark fw-bold px-3 py-1" style="font-size:0.75rem; background: #0f172a; border:none;" onclick="downloadDashboard()"><i class="fa-solid fa-download"></i> PNG</button>
+        <div class="row g-2 mb-3">
+          <div class="col-7">
+            <div class="stat-card">
+              <div class="stat-val" style="color: #0284c7;" id="stat-total-wt">0</div>
+              <div class="stat-lbl">Total Weight (KG)</div>
+            </div>
+          </div>
+          <div class="col-5">
+            <div class="stat-card trips">
+              <div class="stat-val" style="color: #f43f5e;" id="stat-total-trips">0</div>
+              <div class="stat-lbl">Total Trips</div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="stat-card wet">
+              <div class="stat-val" style="color: #10b981;" id="stat-wet-wt">0</div>
+              <div class="stat-lbl">Wet (ओला)</div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="stat-card dry">
+              <div class="stat-val" style="color: #f59e0b;" id="stat-dry-wt">0</div>
+              <div class="stat-lbl">Dry (सुका)</div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="stat-card mix">
+              <div class="stat-val" style="color: #a855f7;" id="stat-mix-wt">0</div>
+              <div class="stat-lbl">Mix (मिश्र)</div>
+            </div>
           </div>
         </div>
 
-        <div class="mb-2 section-divider-title">Vehicle Entry Logs</div>
+        <div class="mb-1 section-divider-title">Waste Segregation Trend (तारीखवार ट्रेंड)</div>
+        <div class="chart-box mb-3">
+          <canvas id="lineChartCanvas"></canvas>
+        </div>
+
+        <div class="row g-2 mb-2">
+          <div class="col-5">
+            <div class="mb-1 section-divider-title">Share %</div>
+            <div class="chart-box-pie">
+              <canvas id="pieChartCanvas"></canvas>
+            </div>
+          </div>
+          <div class="col-7">
+            <div class="mb-1 section-divider-title">Ward Tonnage (KG)</div>
+            <div class="chart-box-pie">
+              <canvas id="wardChartCanvas"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-2 section-divider-title">Vehicle Log Entries</div>
         <div class="table-responsive">
           <table class="table table-clean table-striped align-middle">
             <thead>
@@ -245,13 +245,13 @@
               </tr>
             </thead>
             <tbody id="dashboard-table-body">
-              <tr><td colspan="4" class="text-center text-muted py-3">डेटा लोड होत आहे...</td></tr>
+              <tr><td colspan="4" class="text-center text-muted py-2">डेटा लोड होत आहे...</td></tr>
             </tbody>
           </table>
         </div>
 
-        <div id="ward-summary-wrapper" class="d-none mt-4">
-          <div class="mb-2 section-divider-title">Ward Wise Breakdown</div>
+        <div id="ward-summary-wrapper" class="d-none">
+          <div class="mb-2 section-divider-title">Ward Wise Breakdown Summary</div>
           <div class="table-responsive">
             <table class="table table-clean table-bordered align-middle" style="border-color: #e2e8f0;">
               <thead style="background-color: #f8fafc;">
@@ -272,12 +272,12 @@
 
     <div id="main-form-view" class="d-none">
       <div class="card-custom">
-        <h6 class="text-center mb-3 fw-bold text-dark border-bottom pb-2"><i class="fa-solid fa-pen-line text-primary me-1"></i> New Waste Entry Form</h6>
+        <h6 class="text-center mb-3 fw-bold text-dark border-bottom pb-2"><i class="fa-solid fa-pen-clip text-primary me-1"></i> Garbage Weighment Entry Form</h6>
         <form id="garbageForm" onsubmit="submitForm(event)">
           
           <div class="mb-2">
             <label class="form-label text-secondary fw-bold mb-1" style="font-size:0.8rem;">Vehicle Number (गाडी नंबर)</label>
-            <input type="text" class="form-control form-control-sm text-uppercase" id="vehicleNumber" placeholder="MH-05-AS-1234" required>
+            <input type="text" class="form-control form-control-sm text-uppercase" id="vehicleNumber" placeholder="e.g. MH-02-BQ-5678" required>
           </div>
           
           <div class="mb-2">
@@ -305,10 +305,10 @@
           </div>
           
           <div class="mb-4">
-            <label class="form-label text-secondary fw-bold mb-1" style="font-size:0.8rem;">Enter Weight in KG (वजन टाका)</label>
+            <label class="form-label text-secondary fw-bold mb-1" style="font-size:0.8rem;">Enter Weight in KG (वजन किलोग्राम मध्ये)</label>
             <div class="input-group">
-              <input type="number" class="form-control fw-bold text-dark" id="weight" placeholder="e.g. 850" min="1" required>
-              <span class="input-group-text bg-light text-secondary fw-bold border-start-0">KG</span>
+              <input type="number" class="form-control fw-bold text-dark" id="weight" placeholder="e.g. 950" min="1" required>
+              <span class="input-group-text bg-light text-secondary fw-bold">KG</span>
             </div>
           </div>
           
@@ -326,7 +326,9 @@
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxM3_YVFFwYsNSe0NXTGaTHN71FTQeIefsl_5BihKSSk1AsiWzTHIDcNjM8WFSDtVej/exec";
     
     let rawDataGlobal = [];
-    let myChart = null;
+    let lineChartInstance = null;
+    let pieChartInstance = null;
+    let wardChartInstance = null;
 
     document.addEventListener("DOMContentLoaded", () => {
       const today = new Date().toISOString().split('T')[0];
@@ -365,13 +367,13 @@
       const fromDate = document.getElementById("filter-from-date").value;
       const toDate = document.getElementById("filter-to-date").value;
       
-      document.getElementById('table-title').innerText = selectedWard === "ALL" ? "All Wards Summary Details" : `Ward ${selectedWard} Summary Details`;
+      document.getElementById('report-title').innerText = selectedWard === "ALL" ? "All Wards Summary Report" : `Ward ${selectedWard} Summary Report`;
 
       var tbody = document.getElementById("dashboard-table-body");
       tbody.innerHTML = "";
 
       if(rawDataGlobal.length <= 1) {
-        tbody.innerHTML = `<tr><td colspan="4" class="text-center text-muted py-3">डेटा उपलब्ध नाही...</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="4" class="text-center text-muted py-2">डेटा उपलब्ध नाही...</td></tr>`;
         resetCounters();
         return;
       }
@@ -382,8 +384,7 @@
       let dryWeight = 0;
       let mixWeight = 0;
       
-      let dateWeightMap = {};
-      
+      let dateDataMap = {};
       let wardSummary = {
         "D": { trips: 0, weight: 0 }, "E": { trips: 0, weight: 0 }, "F": { trips: 0, weight: 0 },
         "G": { trips: 0, weight: 0 }, "H": { trips: 0, weight: 0 }, "I": { trips: 0, weight: 0 }, "J": { trips: 0, weight: 0 }
@@ -408,20 +409,21 @@
           if(gType.includes("Dry")) dryWeight += weight;
           if(gType.includes("Mix")) mixWeight += weight;
 
+          // तारीख निहाय ३ स्वतंत्र ओळींसाठी ऑब्जेक्ट तयार करणे
           if(rowDate) {
-            dateWeightMap[rowDate] = (dateWeightMap[rowDate] || 0) + weight;
+            if(!dateDataMap[rowDate]) {
+              dateDataMap[rowDate] = { wet: 0, dry: 0, mix: 0 };
+            }
+            if(gType.includes("Wet")) dateDataMap[rowDate].wet += weight;
+            if(gType.includes("Dry")) dateDataMap[rowDate].dry += weight;
+            if(gType.includes("Mix")) dateDataMap[rowDate].mix += weight;
           }
 
+          // वॉर्ड निहाय समरी
           if(wardSummary[ward] !== undefined) {
             wardSummary[ward].trips++;
             wardSummary[ward].weight += weight;
           }
-
-          // मल्टि-कलर बॅजेस मॅन्युफॅक्चरिंग
-          let badgeColorClass = "bg-light text-dark border";
-          if(gType.includes("Wet")) badgeColorClass = "bg-success text-white";
-          if(gType.includes("Dry")) badgeColorClass = "bg-warning text-dark";
-          if(gType.includes("Mix")) badgeColorClass = "bg-purple text-white";
 
           let tr = document.createElement("tr");
           tr.innerHTML = `
@@ -434,6 +436,7 @@
         }
       }
 
+      // आकडे अपडेट करणे
       document.getElementById("stat-total-wt").innerText = totalWeight.toLocaleString();
       document.getElementById("stat-total-trips").innerText = totalTrips;
       document.getElementById("stat-wet-wt").innerText = wetWeight.toLocaleString();
@@ -441,18 +444,18 @@
       document.getElementById("stat-mix-wt").innerText = mixWeight.toLocaleString();
 
       if(totalTrips === 0) {
-        tbody.innerHTML = `<tr><td colspan="4" class="text-center text-muted py-3">निवडलेल्या फिल्टरमध्ये डेटा सापडला नाही.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="4" class="text-center text-muted py-2">डेटा सापडला नाही.</td></tr>`;
       } else {
         let totalTr = document.createElement("tr");
         totalTr.className = "row-total";
         totalTr.innerHTML = `
-          <td colspan="3" class="text-start">TOTAL SUM (KG)</td>
+          <td colspan="3" class="text-start">TOTAL WEIGHT (SUM)</td>
           <td class="text-end fw-extrabold text-primary">${totalWeight.toLocaleString()} KG</td>
         `;
         tbody.appendChild(totalTr);
       }
 
-      // वॉर्डवाईज समरी टेबल अपडेट
+      // २. वॉर्ड वाईज ब्रेकडाऊन समरी टेबल अपडेट
       const wardWrapper = document.getElementById("ward-summary-wrapper");
       const wardTbody = document.getElementById("ward-summary-table-body");
       wardTbody.innerHTML = "";
@@ -464,7 +467,7 @@
           wRow.innerHTML = `
             <td class="fw-bold">${wKey} Ward</td>
             <td><span class="badge bg-light text-dark border">${wardSummary[wKey].trips}</span></td>
-            <td class="text-end fw-bold">${wardSummary[wKey].weight.toLocaleString()} KG</td>
+            <td class="text-end fw-bold text-secondary">${wardSummary[wKey].weight.toLocaleString()} KG</td>
           `;
           wardTbody.appendChild(wRow);
         }
@@ -472,7 +475,8 @@
         wardWrapper.classList.add("d-none");
       }
 
-      renderLineChart(dateWeightMap);
+      // सर्व ग्राफ्स रेंडर करणे
+      renderAllCharts(dateDataMap, wetWeight, dryWeight, mixWeight, wardSummary);
     }
 
     function resetCounters() {
@@ -484,41 +488,84 @@
       document.getElementById("ward-summary-wrapper").classList.add("d-none");
     }
 
-    // 📈 Minimal Line Chart 
-    function renderLineChart(dateData) {
-      const ctx = document.getElementById('analyticsChart').getContext('2d');
-      if(myChart) { myChart.destroy(); }
+    // 📊 तिन्ही ग्राफ रेंडर करण्याचे कंबाइन फंक्शन
+    function renderAllCharts(dateData, wetSum, drySum, mixSum, wardSummary) {
+      
+      // --- १. लाईन चार्ट (3 Separate Lines) ---
+      const lineCtx = document.getElementById('lineChartCanvas').getContext('2d');
+      if(lineChartInstance) { lineChartInstance.destroy(); }
 
       const sortedDates = Object.keys(dateData).sort();
-      const weights = sortedDates.map(d => dateData[d]);
+      const wetLinePoints = sortedDates.map(d => dateData[d].wet);
+      const dryLinePoints = sortedDates.map(d => dateData[d].dry);
+      const mixLinePoints = sortedDates.map(d => dateData[d].mix);
+      const readableDates = sortedDates.map(d => d.split('-').slice(1).reverse().join('/'));
 
-      // मल्टि-कलर ग्रेडियंट इफेक्ट पांढऱ्या बॅकग्राउंडसाठी
-      let gradient = ctx.createLinearGradient(0, 0, 0, 200);
-      gradient.addColorStop(0, 'rgba(2, 132, 199, 0.2)');
-      gradient.addColorStop(1, 'rgba(2, 132, 199, 0.0)');
-
-      myChart = new Chart(ctx, {
+      lineChartInstance = new Chart(lineCtx, {
         type: 'line',
         data: {
-          labels: sortedDates.map(d => d.split('-').slice(1).reverse().join('/')),
+          labels: readableDates,
+          datasets: [
+            { label: 'Wet', data: wetLinePoints, borderColor: '#10b981', backgroundColor: 'transparent', borderWidth: 2.5, tension: 0.2, pointRadius: 3 },
+            { label: 'Dry', data: dryLinePoints, borderColor: '#f59e0b', backgroundColor: 'transparent', borderWidth: 2.5, tension: 0.2, pointRadius: 3 },
+            { label: 'Mix', data: mixLinePoints, borderColor: '#a855f7', backgroundColor: 'transparent', borderWidth: 2.5, tension: 0.2, pointRadius: 3 }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { position: 'top', labels: { boxWidth: 12, font: { size: 10, weight: 'bold' } } } },
+          scales: { 
+            y: { grid: { color: '#f1f5f9' }, ticks: { color: '#64748b', font: { size: 9 } } },
+            x: { grid: { display: false }, ticks: { color: '#64748b', font: { size: 9, weight: 'bold' } } }
+          }
+        }
+      });
+
+      // --- २. पाय चार्ट (Tonnage distribution Share %) ---
+      const pieCtx = document.getElementById('pieChartCanvas').getContext('2d');
+      if(pieChartInstance) { pieChartInstance.destroy(); }
+
+      pieChartInstance = new Chart(pieCtx, {
+        type: 'pie',
+        data: {
+          labels: ['Wet', 'Dry', 'Mix'],
           datasets: [{
-            data: weights,
-            borderColor: '#0284c7',
-            backgroundColor: gradient,
-            borderWidth: 3,
-            tension: 0.25,
-            fill: true,
-            pointBackgroundColor: '#0f172a',
-            pointBorderColor: '#fff',
-            pointRadius: 4
+            data: [wetSum, drySum, mixSum],
+            backgroundColor: ['#10b981', '#f59e0b', '#a855f7'],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, font: { size: 9 } } } }
+        }
+      });
+
+      // --- ३. वॉर्ड वाईज बार चार्ट (Ward Tonnage comparison) ---
+      const wardCtx = document.getElementById('wardChartCanvas').getContext('2d');
+      if(wardChartInstance) { wardChartInstance.destroy(); }
+
+      const wards = ['D', 'E', 'F', 'G', 'H', 'I', 'J'];
+      const wardWeights = wards.map(w => wardSummary[w].weight);
+
+      wardChartInstance = new Chart(wardCtx, {
+        type: 'bar',
+        data: {
+          labels: wards,
+          datasets: [{
+            data: wardWeights,
+            backgroundColor: '#0284c7',
+            borderRadius: 4
           }]
         },
         options: {
           responsive: true,
           maintainAspectRatio: false,
           plugins: { legend: { display: false } },
-          scales: { 
-            y: { grid: { color: '#f1f5f9' }, ticks: { color: '#64748b', font: { size: 10 } } },
+          scales: {
+            y: { grid: { color: '#f1f5f9' }, ticks: { color: '#64748b', font: { size: 9 } } },
             x: { grid: { display: false }, ticks: { color: '#64748b', font: { size: 10, weight: 'bold' } } }
           }
         }
@@ -531,7 +578,7 @@
       var respMsg = document.getElementById("responseMessage");
       
       submitBtn.disabled = true;
-      submitBtn.innerHTML = "<i class='fa-solid fa-spinner fa-spin'></i> Saving...";
+      submitBtn.innerHTML = "<i class='fa-solid fa-spinner fa-spin'></i> Uploading...";
 
       var formData = {
         vehicleNumber: document.getElementById("vehicleNumber").value.trim().toUpperCase(),
@@ -560,16 +607,17 @@
       }).catch(err => {
         submitBtn.disabled = false;
         submitBtn.innerHTML = "<i class='fa-solid fa-circle-check me-1'></i> Save Entry & Auto Refresh";
-        alert("त्रुटी आली, पुन्हा प्रयत्न करा!");
+        alert("एरर आला, पुन्हा प्रयत्न करा!");
       });
     }
 
+    // 💾 संपूर्ण कंबाइन रिपोर्ट इमेज डाऊनलोड फंक्शन
     function downloadDashboard() {
       var element = document.getElementById("dashboard-capture-area");
       const ward = document.getElementById("filter-ward").value;
       html2canvas(element, { scale: 2, backgroundColor: "#ffffff" }).then(canvas => {
         var link = document.createElement('a');
-        link.download = 'SumeetElko_Minimal_Report_' + ward + '.png';
+        link.download = 'SumeetElko_Full_Minimal_Report_Ward_' + ward + '.png';
         link.href = canvas.toDataURL('image/png');
         link.click();
       });
